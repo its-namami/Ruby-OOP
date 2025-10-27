@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 require_relative 'my_car'
+require_relative 'my_truck'
 
 # Test represents a class with methods to test other classes
 class Test
@@ -12,9 +13,22 @@ class Test
     car.shut_off
     car.spray_paint 'blue'
     puts car.gas_mileage 20, 5
-
+    puts car.fly
     puts MyCar
     puts car
+  end
+
+  def self.my_truck
+    truck = MyTruck.new model: 'Toyota A36', color: 'White', year: '1987'
+    3.times { truck.speed_up }
+    truck.shut_off
+    3.times { truck.brake }
+    truck.shut_off
+    truck.spray_paint 'blue'
+    puts truck.gas_mileage 20, 5
+    puts truck.fly
+    puts MyTruck
+    puts truck
   end
 
   def to_s
