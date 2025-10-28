@@ -11,5 +11,5 @@ class MyCar < Vehicles
   VEHICLE_NAME = 'car'
   ACCELERATE_RATE = 2.8
   BRAKE_RATE = 0.2
-  MAX_SPEED = 250
+  MAX_SPEED = 200
 end

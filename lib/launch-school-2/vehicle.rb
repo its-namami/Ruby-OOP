@@ -7,8 +7,12 @@ class Vehicles
 
   @@vehicles_made = 0
 
-  def self.get_vehicles_made
+  def self.vehicles_made
     @@vehicles_made
+  end
+
+  def self.pretty_print_vehicless_made
+    puts "Vehicles made amount is #{@@vehicles_made}"
   end
 
   def can_fly?
@@ -57,32 +61,35 @@ class Vehicles
 
     if speed < shut_off_max_speed
       self.speed = 0
-      puts 'You shut your car off!'
+      puts "You shut your #{self.class::VEHICLE_NAME} off!"
     else
-      puts "Cannot shut the car down: it's still moving too fast (#{speed})!
+      puts "Cannot shut the #{self.class::VEHICLE_NAME} down: it's still moving too fast (#{speed})!
             The speed should be below #{shut_off_max_speed}"
     end
   end
 
   def spray_paint(color)
     self.color = color
-    puts "Your car has been painted #{color}"
+    puts "Your #{self.class::VEHICLE_NAME} has been painted #{color}"
   end
 
   def pretty_info_color
-    "Your car has color of #{color}"
+    "Your #{self.class::VEHICLE_NAME} has color of #{color}"
   end
 
   def pretty_info_age
-    "Your car is #{age} years old!"
+    "Your #{self.class::VEHICLE_NAME} is #{age} years old"
   end
 
   def pretty_info_model
-    "Your car model is #{model}"
+    "Your #{self.class::VEHICLE_NAME} model is #{model}"
   end
 
   def to_s
-    "Current details of your #{self.class::VEHICLE_NAME} are: #{pretty_info_color}, #{pretty_info_age}, #{pretty_info_model}"
+    "Current details of your #{self.class::VEHICLE_NAME} are:
+    #{pretty_info_color},
+    #{pretty_info_age},
+    #{pretty_info_model}."
   end
 
   private

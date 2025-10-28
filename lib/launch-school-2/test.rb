@@ -15,7 +15,7 @@ class Test
     puts car.gas_mileage 20, 5
     puts car.fly
     puts car
-    puts "Vehicles made number is #{MyTruck.get_vehicles_made}"
+    MyCar.pretty_print_vehicless_made
   end
 
   def self.my_truck
@@ -28,7 +28,7 @@ class Test
     puts truck.gas_mileage 20, 5
     puts truck.fly
     puts truck
-    puts "Vehicles made number is #{MyTruck.get_vehicles_made}"
+    MyTruck.pretty_print_vehicless_made
   end
 
   def to_s
