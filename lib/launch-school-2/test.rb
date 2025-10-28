@@ -14,8 +14,8 @@ class Test
     car.spray_paint 'blue'
     puts car.gas_mileage 20, 5
     puts car.fly
-    puts MyCar
     puts car
+    puts "Vehicles made number is #{MyTruck.get_vehicles_made}"
   end
 
   def self.my_truck
@@ -27,8 +27,8 @@ class Test
     truck.spray_paint 'blue'
     puts truck.gas_mileage 20, 5
     puts truck.fly
-    puts MyTruck
     puts truck
+    puts "Vehicles made number is #{MyTruck.get_vehicles_made}"
   end
 
   def to_s

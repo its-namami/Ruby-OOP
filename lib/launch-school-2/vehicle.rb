@@ -5,12 +5,18 @@ require 'debug'
 class Vehicles
   attr_reader :color, :year, :model, :speed
 
+  @@vehicles_made = 0
+
+  def self.get_vehicles_made
+    @@vehicles_made
+  end
+
   def can_fly?
     false
   end
 
   def fly
-    return "Flyin'" if can_fly?
+    return "We'w flyin'" if can_fly?
 
     "We only drivin'"
   end
@@ -34,6 +40,7 @@ class Vehicles
     @color = props[:color]
     @model = props[:model]
     @speed = 0
+    @@vehicles_made += 1
   end
 
   def speed_text
@@ -66,17 +73,23 @@ class Vehicles
     "Your car has color of #{color}"
   end
 
-  def pretty_info_year
-    current_year = Time.new.year
-
-    "Your car is #{current_year - year.to_i} years old!"
+  def pretty_info_age
+    "Your car is #{age} years old!"
   end
 
   def pretty_info_model
     "Your car model is #{model}"
   end
 
+  def to_s
+    "Current details of your #{self.class::VEHICLE_NAME} are: #{pretty_info_color}, #{pretty_info_age}, #{pretty_info_model}"
+  end
+
   private
+
+  def age
+    Time.new.year - year.to_i
+  end
 
   attr_writer :color, :year, :model, :speed
 end
